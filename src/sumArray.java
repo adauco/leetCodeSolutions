@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+//Sum the int elements in an array
 public class sumArray {
     public static int[] runningSum(int[] nums) {
         int[] result = new int[nums.length];

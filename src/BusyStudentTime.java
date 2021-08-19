@@ -1,4 +1,4 @@
-public class queryTime {
+ class BusyStudentTime {
 
     public static int busyStudent(int[] startTime, int[] endTime, int queryTime) {
         int counter = 0;
