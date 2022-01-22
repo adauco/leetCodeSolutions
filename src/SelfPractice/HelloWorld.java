@@ -1,3 +1,5 @@
+import AlanCode.FibonacciFind;
+
 import java.util.HashSet;
 
 // Find duplicate characters in a String and count the number of occurrences of the duplicate characters
@@ -15,8 +17,8 @@ public class HelloWorld{
     }
 
     public static void main(String[] args){
-        HelloWorld ans = new HelloWorld();
-        System.out.println(ans.duplicate("aaasssdddssaaassdddghyuj"));
+        FibonacciFind ans = new FibonacciFind();
+       // System.out.println(ans.duplicate("aaasssdddssaaassdddghyuj"));
     }
     //Kyle Bolt
 }

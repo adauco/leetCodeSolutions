@@ -1,28 +1,46 @@
 import java.util.HashMap;
+import java.util.Stack;
 
 /*
 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-
 An input string is valid if:
-
 Open brackets must be closed by the same type of brackets.
 Open brackets must be closed in the correct order.
-
  */
 
 public class validParentheses {
-
-
     public static void main(String args[]) {
-        /*isValid("[{{}}]()");
+        isValid("[{{}}]()");
         isValid("");
         isValid("[{{}}](){");
-        isValid("(()])}[}[}[]][}}[}{})][[(]({])])}}(])){)((){");*/
+        isValid("(()])}[}[}[]][}}[}{})][[(]({])])}}(])){)((){");
         int[] a = {1,1,2,3,3,3,3,3,3};
-        int o = removeDuplicates(a);
-        System.out.println("Largo de cadena " + o);
+        //int o = removeDuplicates(a);
+        //System.out.println("Largo de cadena " + o);
+    }
 
-
+    public static boolean isValid(String s) {
+        if(s.length() % 2 == 1) {
+            return false;
+        }
+        Stack<Character> stack = new Stack<>();
+        for(int i = 0; i < s.length(); i++){
+            Character c = s.charAt(i);
+            if(c == '[') {
+                stack.push(']');
+            } else if(c == '{') {
+                stack.push('}');
+            } else if (c == '(') {
+                stack.push(')');
+            } else {
+                if(stack.isEmpty() || c != stack.pop()){
+                    System.out.println("String " + s + " is FALSE");
+                    return false;
+                }
+            }
+        }
+        System.out.println("String " + s + " is TRUE");
+        return stack.empty();
     }
 
     public static int removeDuplicates(int[] nums) {
@@ -37,7 +55,7 @@ public class validParentheses {
         return i + 1;
     }
 
-    public static boolean isValid(String s) {
+    public static boolean isValid2(String s) {
         String opening = "[{(";
         String closing = "]})";
         Boolean value = true;
